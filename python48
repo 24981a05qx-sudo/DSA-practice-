@@ -16,7 +16,7 @@
 #Explanation:
 #Here, n / 3 = 7 / 3 = 2.
 
-Therefore the elements appearing 3 or more times is : [1, 2]
+#Therefore the elements appearing 3 or more times is : [1, 2]
 
 
 n = int(input("Enter size of array: "))
