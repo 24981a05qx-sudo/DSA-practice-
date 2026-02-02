@@ -1,25 +1,23 @@
-#Given two integer arrays nums1 and nums2. Both arrays are sorted in non-decreasing order.
-#Merge both the arrays into a single array sorted in non-decreasing order.
+#Given an integer array nums of size n containing values from [1, n] and each value appears exactly once in the array, 
+# except for A, which appears twice and B which is missing.
 
-#The final sorted array should be stored inside the array nums1 and it should be done in-place.
-#nums1 has a length of m + n, where the first m elements denote the elements of nums1 and rest are 0s.
+#Return the values A and B, as an array of size 2, where A appears in the 0-th index and B in the 1st index.
+#Note: You are not allowed to modify the original array.
 
-#nums2 has a length of n.
 
 #Example 1
 
-#Input: nums1 = [-5, -2, 4, 5], nums2 = [-3, 1, 8]
-#Output: [-5, -3, -2, 1, 4, 5, 8]
+#Input: nums = [3, 5, 4, 1, 1]
+#Output: [1, 2]
 #Explanation:
-#The merged array is: [-5, -3, -2, 1, 4, 5, 8], where [-5, -2, 4, 5] are from nums1 and [-3, 1, 8] are from nums2
+#1 appears two times in the array and 2 is missing from nums
 
 #Example 2
 
-#Input: nums1 = [0, 2, 7, 8], nums2 = [-7, -3, -1]
-#Output: [-7, -3, -1, 0, 2, 7, 8]
+#Input: nums = [1, 2, 3, 6, 7, 5, 7]
+#Output: [7, 4]
 #Explanation:
-#The merged array is: [-7, -3, -1, 0, 2, 7, 8], where [0, 2, 7, 8] are from nums1 and [-7, -3, -1] are from nums2
-
+#7 appears two times in the array and 4 is missing from nums.
 
 n = int(input("Enter size of array: "))
 
