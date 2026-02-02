@@ -1,0 +1,42 @@
+#Given a sorted array of integers nums with 0-based indexing, find the index of a specified target integer. 
+# If the target is found in the array, return its index. If the target is not found, return -1.
+
+#Example 1
+
+#Input: nums = [-1,0,3,5,9,12], target = 9
+#Output: 4
+#Explanation: The target integer 9 exists in nums and its index is 4
+
+#Example 2
+
+#Input: nums = [-1,0,3,5,9,12], target = 2
+#Output: -1
+#Explanation: The target integer 2 does not exist in nums so return -1
+
+
+n = int(input("Enter number of elements: "))
+
+nums = []
+print("Enter sorted elements:")
+for i in range(n):
+    nums.append(int(input()))
+
+target = int(input("Enter target value: "))
+
+left = 0
+right = n - 1
+index = -1
+
+while left <= right:
+    mid = (left + right) // 2
+    
+    if nums[mid] == target:
+        index = mid
+        break
+    elif nums[mid] < target:
+        left = mid + 1
+    else:
+        right = mid - 1
+
+print("Index of target:")
+print(index)
