@@ -1,0 +1,36 @@
+#You are given a sorted array of integers arr and an integer target.
+#  Your task is to determine how many times target appears in arr.
+#Return the count of occurrences of target in the array.
+
+
+#Example 1
+
+#Input: arr = [0, 0, 1, 1, 1, 2, 3], target = 1
+#Output: 3
+#Explanation: The number 1 appears 3 times in the array.
+
+#Example 2
+
+#Input: arr = [5, 5, 5, 5, 5, 5], target = 5
+#Output: 6
+#Explanation: All elements in the array are 5, so the target appears 6 times.
+
+
+
+def count_occurences(arr,num):
+    count=0
+    for i in range(0,len(arr)):
+        if arr[i]==num:
+            count+=1
+    return count
+        
+arr=list(map(int,input("Enter the array elements in ascending order:").split()))
+
+num=int(input("Enter the element to count it's occurences:"))
+
+result= count_occurences(arr,num)
+
+if result>0:
+    print("The element",num,"repeated ",result,"times")
+else :
+    print("The element num not repeated in the array")
