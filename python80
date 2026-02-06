@@ -1,0 +1,43 @@
+#Given a 2D array matrix where each row is sorted in ascending order from left to right and each column is sorted in ascending order from top to bottom,
+#  write an efficient algorithm to search for a specific integer target in the matrix.
+
+#Example 1
+
+#Input: matrix = [ [1, 4, 7, 11, 15], [2, 5, 8, 12, 19], [3, 6, 9, 16, 22], [10, 13, 14, 17, 24], [18, 21, 23, 26, 30] ], target = 5
+#Output: True
+#Explanation: The target 5 exists in the matrix in the index (1,1)
+
+#Example 2
+
+#Input: matrix= [ [1, 4, 7, 11, 15], [2, 5, 8, 12, 19], [3, 6, 9, 16, 22], [10, 13, 14, 17, 24], [18, 21, 23, 26, 30] ], target = 20
+#Output: False
+#Explanation: The target 20 does not exist in the matrix.
+
+n = int(input("Enter number of rows: "))
+m = int(input("Enter number of columns: "))
+
+matrix = []
+for i in range(n):
+    row = []
+    for j in range(m):
+        row.append(int(input("Enter element: ")))
+    matrix.append(row)
+
+target = int(input("Enter target: "))
+
+
+row = 0
+col = m - 1
+found = False
+
+while row < n and col >= 0:
+    val = matrix[row][col]
+    if val == target:
+        found = True
+        break
+    elif val > target:
+        col -= 1  
+    else:
+        row += 1   
+
+print("Result:", found)
