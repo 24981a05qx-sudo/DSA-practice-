@@ -1,0 +1,47 @@
+#Given a non-empty grid mat consisting of only 0s and 1s, where all the rows are sorted in ascending order, 
+# find the index of the row with the maximum number of ones.
+#If two rows have the same number of ones, consider the one with a smaller index. If no 1 exists in the matrix, return -1.
+
+#Example 1
+
+#Input : mat = [ [1, 1, 1], [0, 0, 1], [0, 0, 0] ]
+#Output: 0
+#Explanation: The row with the maximum number of ones is 0 (0 - indexed).
+
+#Example 2
+
+#Input: mat = [ [0, 0], [0, 0] ]
+#Output: -1
+#Explanation: The matrix does not contain any 1. So, -1 is the answer.
+
+n = int(input("Enter number of rows: "))
+m = int(input("Enter number of columns: "))
+
+mat = []
+for i in range(n):
+    row = []
+    for j in range(m):
+        row.append(int(input("Enter element (0/1): ")))
+    mat.append(row)
+
+max_ones = -1
+row_index = -1
+
+# Traverse each row
+for i in range(n):
+
+    j = 0
+    while j < m and mat[i][j] == 0:
+        j += 1
+    
+    ones_count = m - j   # total one's in single row
+    
+    if ones_count > max_ones:
+        max_ones = ones_count
+        row_index = i
+
+# no one's are found
+if max_ones == 0:
+    print(-1)
+else:
+    print("Row with maximum ones:", row_index)
