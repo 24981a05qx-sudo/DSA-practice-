@@ -1,0 +1,40 @@
+#Write a function to find the longest common prefix string amongst an array of strings.
+#If there is no common prefix, return an empty string "".
+
+
+#Example 1
+
+#Input : str = ["flowers" , "flow" , "fly", "flight" ]
+#Output : "fl"
+#Explanation :
+#All strings given in array contains common prefix "fl".
+
+#Example 2
+#input : str = ["dog" , "cat" , "animal", "monkey" ]
+#Output : ""
+#Explanation :
+#There is no common prefix among the given strings in array.
+
+
+n = int(input("Enter number of strings: "))
+strs = []
+for i in range(n):
+    word = input("Enter string: ")
+    strs.append(word)
+
+
+if n == 0:
+    print("")
+else:
+    prefix = strs[0]   
+    length = len(prefix)
+
+    for i in range(1, n):
+        j = 0
+        while j < length and j < len(strs[i]) and prefix[j] == strs[i][j]:
+            j += 1
+        length = j   
+
+
+    result = prefix[:length]
+    print("Longest Common Prefix:", result)
