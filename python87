@@ -1,0 +1,54 @@
+#Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+
+
+#An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
+#  typically using all the original letters exactly once.
+
+
+#Example 1
+
+#Input : s = "anagram" , t = "nagaram"
+#Output : true
+#Explanation :
+#We can rearrange the characters of string s to get string t as frequency of all characters from both strings is same.
+
+#Example 2
+
+#Input : s = "dog" , t = "cat"
+#Output : false
+#Explanation :
+#We cannot rearrange the characters of string s to get string t as frequency of all characters from both strings is not same
+
+s = input("Enter first string: ")
+t = input("Enter second string: ")
+
+
+if len(s) != len(t):
+    print("false")
+else:
+ 
+    s_list = list(s)
+    t_list = list(t)
+
+
+    for i in range(len(s_list)):
+        for j in range(len(s_list) - 1):
+            if s_list[j] > s_list[j+1]:
+                temp = s_list[j]
+                s_list[j] = s_list[j+1]
+                s_list[j+1] = temp
+
+
+    for i in range(len(t_list)):
+        for j in range(len(t_list) - 1):
+            if t_list[j] > t_list[j+1]:
+                temp = t_list[j]
+                t_list[j] = t_list[j+1]
+                t_list[j+1] = temp
+
+
+    if s_list == t_list:
+        print("true")
+    else:
+        print("false")
