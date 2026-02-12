@@ -20,7 +20,6 @@
 #Explanation:
 #Index 0: 5 options (even digits)
 #Index 1: 4 options (prime digits)
-
 #Total: 5 * 4 = 20
 
 
@@ -31,7 +30,7 @@ def power(base, exp):
     result = 1
     base %= MOD
     while exp > 0:
-        if exp % 2 == 1:
+        if exp % 2 == 1: 
             result = (result * base) % MOD
         base = (base * base) % MOD
         exp //= 2
