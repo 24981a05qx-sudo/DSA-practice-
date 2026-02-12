@@ -21,7 +21,8 @@
 #Index 0: 5 options (even digits)
 #Index 1: 4 options (prime digits)
 
-Total: 5 * 4 = 20
+#Total: 5 * 4 = 20
+
 
 
 MOD = 10**9 + 7
@@ -45,3 +46,5 @@ def countGoodNumbers(n: int) -> int:
 
 n = int(input("Enter length n: "))
 print("Number of good digit strings:", countGoodNumbers(n))
+
+
