@@ -1,0 +1,34 @@
+#Given an integer n.Generate all possible combinations of well-formed parentheses of length 2 x N.
+
+#Example 1
+
+#Input : n = 3
+#Output : [ "((()))" , "(()())" , "(())()" , "()(())" , "()()()" ]
+
+#Example 2
+
+#Input : 2
+#Output : [ "(())" , "()()" ]
+
+
+def valid_binary_strings(n):
+    result = []
+
+    def backtrack(curr):
+        if len(curr) == n:
+            result.append(curr)
+            return
+        
+        backtrack(curr + '0')
+        
+        if len(curr) == 0 or curr[-1] == '0':
+            backtrack(curr + '1')
+
+    backtrack("")
+    return result
+
+
+n = int(input("Enter n: "))
+
+ans = valid_binary_strings(n)
+print(ans)
